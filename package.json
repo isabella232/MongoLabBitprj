@@ -1,0 +1,16 @@
+{
+  "name": "website-database",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lab-users-db.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^3.4.0"
+  }
+}
