@@ -13,11 +13,11 @@ app.listen(port, () => {
 })
 
 // TODO: REST APIs down below
-// TODO: Add Volunteer
+// Add Volunteer
 app.post('/volunteers', (req, res) =>{
     const volunteer = new Volunteer(req.body)
     
-    volunteer.save().then(() => {
+    volunteer.save().then((volunteer) => {
         res.status(201).send(volunteer)
 
     }).catch((e) => {
@@ -25,11 +25,26 @@ app.post('/volunteers', (req, res) =>{
     })
 })
 
-// TODO: Read ALL volunteers
+// Read ALL volunteers
+app.get('/volunteers', (req, res) => {
+    Volunteer.find({}).then((volunteer) => {
+        res.send(volunteer)
+    }).catch((e) => {
+        res.status(500).send()
+    })
+})
 
+// TODO: Read ALL volunteers by First Name
+app.get('/volunteers/:firstName', (req, res) => {
+    const firstName = req.params
+    console.log(firstName)
 
-// TODO: Read SINGLE volunteer
-
+    Volunteer.find(firstName).then((volunteer) => {
+        res.status(200).send(volunteer)
+    }).catch((e) => {
+        res.status(500).send()
+    })
+})
 
 // TODO: Delete Volunteer
 
