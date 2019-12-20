@@ -3,11 +3,67 @@ body {
     margin: 0;
 }
 
+.Header-branding-logo{
+    height: 50px;
+    width: 70;
+}
+
+/* top nav bar */
+
+.nav-list {
+    left: 0;
+    margin-top: 0;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 0;
+    list-style-type: none;
+    background-color: white;
+    position: fixed;
+    top: 0;
+
+    width: 100%;
+}
+
+.nav-style {
+    float: right;
+    border-radius: 25px;
+    background-color: skyblue
+}
+
+.nav-list li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 30px;
+    text-decoration: none;
+}
+
+.nav-list li a:hover:not(.active) {
+    background-color: lightblue;
+    border-radius: 25px;
+}
+
+.active {
+    background-color: skyblue;
+    border-radius: 25px;
+}
+/* end top nav bar */
+
+.header-image{
+    width: 100%;
+    z-index: -1;
+    left: 0; 
+    top: 80px;
+    position: absolute;
+    filter: brightness(50%)
+
+} 
+
 .main-title {
-    color: #84d0e1;
+    color:white;
     font-size: 55px;
-    font-weight: lighter;
-    margin: 60px 0px;
+    font-weight: bolder;
+    margin: 300px 0px;
     text-align: center;
 }
 
@@ -18,16 +74,17 @@ body {
 
 .event-ul {
     list-style-type: none;
+    padding-top: 200px;
     margin: 20px 20px;
 }
 
-li {
+.event-ul li {
     width: 600px;
     height: 150px;
     padding: 30px;
 }
 
-li:hover:not(.active) {
+.event-ul li:hover:not(.active) {
     box-shadow: 10px 10px 10px 10px #84d0e1;
 }
 

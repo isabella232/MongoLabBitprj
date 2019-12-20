@@ -1,7 +1,7 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    background-image: image("turkey_trot.jpeg");
-    
+margin:0;
+font-family: 'Alice', sans-serif;
+/* background-image: image("turkey_trot.jpeg"); */
 }
 
 .Header-branding-logo{
@@ -51,55 +51,66 @@ body {
 }
 /* end top nav bar */
 
-.header-image{
-    width: 100%;
-    left: 0; 
-    top: 80px;
-    position: absolute;
+header {
+    overflow: hidden;
+}
+
+.header-image {
     filter: brightness(50%);
+    width: 100%;
     z-index: -1;
 }
 
 .header-text{
-    color: white;
+    color: black;
     font-size: 70px;
-    margin-top: 300px;
+    padding-top: 150px;
     text-align: center;
     position: relative;
 }
 
-.date-box {
-    height: 300px;
-    width: 300px;
-    background-color: white;
-    left: 0%;
-    position: relative;
-    margin-top: 150px;
-    text-align: center;
+.sections {
+    padding-left: 50px;
+    padding-right: 500px;
+    margin-bottom: 100px;
 
+    display: flex;
+    flex-direction: row;
 }
 
-.month {
-    padding-top: 70px;
+.sections h1 {
+    padding-top: 20px;
+}
+
+.text-image1 {
+    right: 0;
+    position: absolute;
+    padding-right: 40px;
+
+    width: 450px;
+    height: 350px;
+}
+
+.textInSection{
     font-size: 20px;
-    font-weight: lighter;
+    padding-left: 20px;
 }
 
-.day {
-    margin: 0;
-    font-size: 60px;
+.imageInSection{
+    height: 400px;
 }
 
-.time {
-    font-weight: lighter;
+.contact_button {
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 40px;
+    background-color: lightblue;   
 }
 
-.description {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    /* margin-left: 20%; */
-    text-align: center;
-    width: 50%;
+h1{
+    font-size: 80px;
+    font-family: "Alice";
 }
-    
+
+
+
