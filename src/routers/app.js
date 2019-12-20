@@ -26,6 +26,7 @@ router.get('/contactus', (req,res) => {
 
 router.get('/events', (req,res) => { 
 	router.render('events')
+	
 })
 
 router.get('*', (req, res) => { 
