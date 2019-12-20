@@ -3,9 +3,6 @@ const express = require('express');
 
 const router = express();
 const router = new express.Router()
-const publicDirectoryPath = path.join(__dirname, '../public')
-
-router.use(express.static(publicDirectoryPath))
 
 router.get('', (req, res) => {
 	router.render('home')
@@ -34,3 +31,5 @@ router.get('/events', (req,res) => {
 router.get('*', (req, res) => ) { 
 	router.render('404 error')
 }
+
+module.exports = router
