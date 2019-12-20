@@ -1,13 +1,13 @@
 
 const express = require('express')
-require('./db/mongoose')
+require('../db/mongoose')
 const Volunteer = require('../models/volunteers')
 const router = new express.Router()
 
 // REST APIs
 // Add Volunteer
 router.post('/volunteers', async (req, res) =>{
-    const volunteer = new Volunteer(req, body)
+    const volunteer = new Volunteer(req.body)
     
     try { 
     	await volunteer.save()

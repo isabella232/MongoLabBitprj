@@ -1,13 +1,13 @@
 
 const express = require('express')
-require('./db/mongoose')
+require('../db/mongoose')
 const Admin = require('../models/admins')
 const router = new express.Router()
 
 // REST APIs
 // Add Admin
 router.post('/admin', async (req, res) =>{
-    const Admin = new Admin(req, body)
+    const Admin = new Admin(req.body)
     
     try { 
     	await Admin.save()

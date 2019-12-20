@@ -5,7 +5,7 @@ const Volunteer = require('./models/volunteers')
 const volunteerRouter = require('./routers/volunteers')
 const adminRouter = require('./routers/admin')
 const app = express()
-const config = require('./config') // TODO: check
+const config = require('config') // TODO: check
 const port = process.env.PORT || 3000
 
 // auto parses json
