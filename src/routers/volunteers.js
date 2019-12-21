@@ -57,7 +57,7 @@ router.delete('/volunteers/:id', async (req, res) => {
 		}
 
 		// if found send user
-		res.send(user)
+		res.send(volunteer)
 	//send 500 error if error
 	} catch(e) { 
 		res.status(500).send()

@@ -12,8 +12,8 @@ const port = process.env.PORT || 3000
 // auto parses json
 app.use(express.json())
 // use modules
-app.use(volunteerRouter)
 app.use(express.static('./public', config.static)) /// TODO: also check this
+app.use(volunteerRouter)
 app.use(adminRouter)
 app.use(eventRouter)
 
