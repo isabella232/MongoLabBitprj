@@ -4,10 +4,15 @@ require('../db/mongoose')
 const Volunteer = require('../models/volunteers')
 const router = new express.Router()
 
+app = express()
+const bodyParser = require('body-parser')
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 // REST APIs
 // Add Volunteer
+
 router.post('/volunteers', async (req, res) =>{
-    const volunteer = new Volunteer(req.body)
+	const volunteer = new Volunteer(req.body)
 	console.log(volunteer);
     try { 
     	await volunteer.save()

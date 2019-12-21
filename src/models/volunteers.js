@@ -24,16 +24,16 @@ const Volunteer = mongoose.model('Volunteer', {
         //     }
         // }
     },
-    // age: {
-    //     type: Number,
-    //     default: 0,
-    //     // Check if value > 0 and is an integer
-    //     validate(value) {
-    //         if (value < 0 || !Number.isInteger(value)) {
-    //             throw new Error('Invalid input for age.')
-    //         }
-    //     }
-    // },
+    age: {
+        type: Number,
+        default: 0,
+        // Check if value > 0 and is an integer
+        validate(value) {
+            if (value < 0 || !Number.isInteger(value)) {
+                throw new Error('Invalid input for age.')
+            }
+        }
+    },
     email: {
         type: String,
         required: true,
