@@ -8,7 +8,7 @@ const router = new express.Router()
 // Add Applicant
 router.post('/applicants', async (req, res) =>{
     const applicant = new Applicant(req.body)
-    
+    console.log(applicant);
     try { 
     	await applicant.save()
     	res.status(201).send(applicant)

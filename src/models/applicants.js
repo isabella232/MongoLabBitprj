@@ -89,4 +89,4 @@ const v4 = {
 	"password":"123sugarr"
 }
 
-module.exports = Volunteer
+module.exports = Applicant

@@ -8,11 +8,12 @@ const router = new express.Router()
 // Add Volunteer
 router.post('/volunteers', async (req, res) =>{
     const volunteer = new Volunteer(req.body)
-    
+	console.log(volunteer);
     try { 
     	await volunteer.save()
     	res.status(201).send(volunteer)
     } catch(e) {
+		console.log(e);
         res.status(400).send(e)
     }
 })
