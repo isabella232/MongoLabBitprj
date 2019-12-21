@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sign-up-form.css">
+  </head>
+    <div class="container">
+      <h1>Create New Event</h1>
+      <p>Fill out this form to create a new event.</p>
+      <hr>
+  
+      <label for="event-name"><b>Event Name</b></label>
+      <input type="text" placeholder="Enter the Event Name" name="event-name" required>
+  
+      <label for="date"><b>Date in form of MM/DD/YYYY</b></label>
+      <input type="text" placeholder="Enter the event's date" name="date" required>
+  
+      <label for="time"><b>Event Start Time</b></label>
+      <input type="text" placeholder="Enter the event's start time" name="time" required>
+
+      <label for="location"><b>Event Location</b></label>
+      <input type="text" placeholder="Enter the event's location" name="location" required>
+
+      <label for="coordinator"><b>Event Coordinator</b></label>
+      <input type="text" placeholder="Enter the event's coordinator" name="coordinator" required>
+
+      <label for="attendeeCount"><b>Number of Attendants at the Event</b></label>
+      <input type="text" placeholder="Enter the number of attendants at the event" name="attendeeCount" required>
+  
+      <div class="continue">
+        <button type="button" class="cancel-button">Cancel</button>
+        <button type="submit" class="signup-button">Create New Event</button>
+      </div>
+    </div>
+  </form>
