@@ -51,7 +51,7 @@ body {
 
 .header-image{
     width: 100%;
-    z-index: -1;
+    z-index: -2;
     left: 0; 
     top: 80px;
     position: absolute;
@@ -69,9 +69,9 @@ body {
 /* search bar */
 .search {
     width: 500px;
-    margin-right: px;
-    position: relative;
     display: flex;
+    z-index: -1;
+    position: relative;
   }
   
   .searchTerm {
@@ -84,6 +84,8 @@ body {
     border-radius: 5px 0 0 5px;
     outline: none;
     color: #9DBFAF;
+    z-index: -1;
+    position: relative;
   }
   
   .searchTerm:focus{
@@ -100,15 +102,16 @@ body {
     color: #fff;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 40px;
   }
   
   .wrap{
-    width: 30%;
+    width: 40%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: -1;
   }
 
   /* list of events */
