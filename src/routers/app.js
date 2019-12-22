@@ -3,7 +3,10 @@ const express = require('express');
 require('../db/mongoose')
 const Event = require('../models/events')
 const router = express();
-// const router = new express.Router()
+
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+]
 
 const publicDirectoryPath = path.join(__dirname, '../../public')
 
@@ -18,13 +21,13 @@ router.get('/turkey-trot', async (req, res) => {
 	const eventName = req.params
 
 	try {
-		const event = await Event.findOne({eventName:"Fake Title"})
+		const event = await Event.findOne({eventName:"Turkey Trot"})
 		res.render('turkey-trot', {
 			eventName: event.eventName,
 			coordinator: event.coordinator,
-			date: event.date,
-			month: event.month,
-			day: event.day,
+			// date: event.date,
+			month: monthNames[Number(event.date.slice(5, 7)) - 1].split("").join(" ").toUpperCase(),
+			day: event.date.slice(8),
 			time: event.time,
 			location: event.location,
 			description: event.description
@@ -32,18 +35,28 @@ router.get('/turkey-trot', async (req, res) => {
 	} catch(e) {
 		res.status(500).send()
 	}
-
-	// res.render('turkey-trot', {
-	// 	eventName: "Fake Title",
-	// 	coordinator: "Kim Lee",
-	// 	date: "12/29/19",
-	// 	month: "S E P T E M B E R",
-	// 	day: "21",
-	// 	time: "12:30 PM",
-	// 	location: "2040 Calaveras Ave Davis, CA 95616",
-	// 	description: "set up stuff"
-	// })
 })
+
+router.get('/coastal-cleanup', async (req, res) => {
+	const eventName = req.params
+
+	try {
+		const event = await Event.findOne({eventName:"Coastal Cleanup"})
+		res.render('coastal-cleanup', {
+			eventName: event.eventName,
+			coordinator: event.coordinator,
+			// date: event.date,
+			month: monthNames[Number(event.date.slice(5, 7)) - 1].split("").join(" ").toUpperCase(),
+			day: event.date.slice(8),
+			time: event.time,
+			location: event.location,
+			description: event.description
+		})
+	} catch(e) {
+		res.status(500).send()
+	}
+})
+
 
 router.get('/home', (req, res) => {
 	router.render('home')

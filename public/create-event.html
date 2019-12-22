@@ -11,28 +11,37 @@
       <h1>Create New Event</h1>
       <p>Fill out this form to create a new event.</p>
       <hr>
-  
-      <label for="event-name"><b>Event Name</b></label>
-      <input type="text" placeholder="Enter the Event Name" name="event-name" required>
-  
-      <label for="date"><b>Date in form of MM/DD/YYYY</b></label>
-      <input type="text" placeholder="Enter the event's date" name="date" required>
-  
-      <label for="time"><b>Event Start Time</b></label>
-      <input type="text" placeholder="Enter the event's start time" name="time" required>
+      
+      <form action="/events" method="POST">
+        <label for="event-name"><b>Event Name</b></label>
+        <input type="text" placeholder="Enter the Event Name" name="eventName" required>
+    
+        <label for="coordinator"><b>Event Coordinator</b></label>
+        <input type="text" placeholder="Enter the event's coordinator" name="coordinator" required>
 
-      <label for="location"><b>Event Location</b></label>
-      <input type="text" placeholder="Enter the event's location" name="location" required>
+        <label for="date"><b>Date in form of MM/DD/YYYY</b></label>
+        <br>
+        <input type="date" placeholder="Enter the event's date" name="date" required>
+        <br>
+        <br>
+        <label for="time"><b>Event Start Time</b></label>
+        <br>
+        <input type="time" placeholder="Enter the event's start time" name="time" required>
+        <br>
+        <br>
+        <label for="location"><b>Event Location</b></label>
+        <input type="text" placeholder="Enter the event's location" name="location" required>
 
-      <label for="coordinator"><b>Event Coordinator</b></label>
-      <input type="text" placeholder="Enter the event's coordinator" name="coordinator" required>
+        <label for="description"><b>Please add a short description</b></label>
+        <input type="text" placeholder="Enter a short desciprtion" name="description" required>
 
-      <label for="attendeeCount"><b>Number of Attendants at the Event</b></label>
-      <input type="text" placeholder="Enter the number of attendants at the event" name="attendeeCount" required>
-  
-      <div class="continue">
-        <button type="button" class="cancel-button">Cancel</button>
-        <button type="submit" class="signup-button">Create New Event</button>
-      </div>
+        <label for="attendeeCount"><b>Number of Attendants at the Event</b></label>
+        <input type="text" placeholder="Enter the number of attendants at the event" name="attendeeCount">
+    
+        <div class="continue">
+          <button type="button" class="cancel-button">Cancel</button>
+          <button type="submit" class="signup-button">Create New Event</button>
+        </div>
+      </form>
     </div>
   </form>

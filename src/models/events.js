@@ -20,12 +20,10 @@ const Event = mongoose.model('Event', {
     },
     month: {
         type: String,
-        required: true,
         trim: true
     },
     day: {
         type: String,
-        required: true,
         trim: true
     },
     time: {
@@ -49,14 +47,5 @@ const Event = mongoose.model('Event', {
         default: 0
     }
 })
-
-event1 = {
-    eventName: "Turkey Trot",
-    date: "12/30/19",
-    time: "12:30 pm",
-    location: "Davis High School",
-    coordinator: "Amy Schumer",
-    attendeeCount: 50
-}
 
 module.exports = Event

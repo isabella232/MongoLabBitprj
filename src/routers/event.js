@@ -5,14 +5,19 @@ require('../db/mongoose')
 const Event = require('../models/events')
 const router = new express.Router()
 
-const publicDirectoryPath = path.join(__dirname, '../../public')
-router.use(express.static(publicDirectoryPath))
+// const publicDirectoryPath = path.join(__dirname, '../../public')
+// router.use(express.static(publicDirectoryPath))
+
+app = express()
+const bodyParser = require('body-parser')
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // REST APIs
 // Add Event
 router.post('/events', async (req, res) =>{
     const event = new Event(req.body)
-    
+    console.log(event);
     try { 
     	await event.save()
     	res.status(201).send(event)
