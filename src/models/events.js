@@ -8,7 +8,22 @@ const Event = mongoose.model('Event', {
         trim: true,
         maxlength: 30
     },
+    coordinator: {
+        type: String,
+        required: true,
+        trim: true,
+    },
     date: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    month: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    day: {
         type: String,
         required: true,
         trim: true
@@ -24,10 +39,10 @@ const Event = mongoose.model('Event', {
         trim: true,
         maxlength: 50
     },
-    coordinator: {
+    description: {
         type: String,
         required: true,
-        trim: true,
+        trim: true
     },
     attendeeCount: {
         type: Number,

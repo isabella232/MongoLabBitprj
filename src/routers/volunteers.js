@@ -33,10 +33,13 @@ router.get('/volunteers', async (req, res) => {
 	}
 })
 
-// Read SINGLE volunteer
-router.get('/volunteers/:id', async (req, res) => { 
+// Read a single volunteer (login a person) by cross checking email/password
+router.get('/volunteers/:email', async (req, res) => { 
+
 	try { 
-		const volunteers = await Volunteer.findById(_id)
+		const email = req.params
+		console.log(email);
+		const volunteers = await Volunteer.findOne(email)
 
 		// if not found return 404 error
 		if (!volunteer) { 

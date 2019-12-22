@@ -20,16 +20,16 @@
     </header>
           <div class="login">
               <h1> Member Login</h1>
+              <form action="/volunteers/:email" method="GET">
                 <div class="username">
-                  <input type="text" placeholder="Username" required>
+                  <input type="text" placeholder="Email" name="email" required>
                 </div>
                 <div class="password">
-                  <input type="text" placeholder="Password" required>
+                  <input type="text" placeholder="Password" name="password" required>
                 </div>
-                  <a href="event_page_1.html"><button type="submit" value="fetch" class = "button">Login</button></a>
-
+                  <button type="submit" value="fetch" class = "button">Login</button>
                 <input type="checkbox"> Remember me
                 <div class="new-account-button"><a href="sign-up-form.html">Not a member? Sign up here </a></div>
-           
+              </form> 
           </div>
     </div>

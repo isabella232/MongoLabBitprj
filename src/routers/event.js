@@ -1,8 +1,12 @@
 
 const express = require('express')
+const path = require('path')
 require('../db/mongoose')
 const Event = require('../models/events')
 const router = new express.Router()
+
+const publicDirectoryPath = path.join(__dirname, '../../public')
+router.use(express.static(publicDirectoryPath))
 
 // REST APIs
 // Add Event
@@ -65,6 +69,8 @@ router.delete('/events/:id', async (req, res) => {
 		res.status(500).send()
 	}
 })
+
+
 
 // TODO: Update Event
 // router.patch('./events/:id', async (req, res) => { 
