@@ -27,12 +27,20 @@ router.post('/events', async (req, res) =>{
 })
 
 // Read ALL events
+// Added functionality, if url has eventName search parameter, fitlers for that event name
 router.get('/events', async (req, res) => { 
-	try { 
-		const event = await Event.find({})
-		res.send(event)
-	} catch (e) { 
-		res.status(500).send()
+	//Create variable to store filter
+	var query = {}
+
+	// if filter is present
+	if (req.query.eventName) { 
+			query.eventName = req.query.eventName
+			const events = await Event.find({"eventName":query.eventName})
+			res.send(events)
+	//no filter present
+	} else { 
+		const events = await Event.find()
+		res.send(events)
 	}
 })
 
