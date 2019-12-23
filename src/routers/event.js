@@ -5,9 +5,6 @@ require('../db/mongoose')
 const Event = require('../models/events')
 const router = new express.Router()
 
-// const publicDirectoryPath = path.join(__dirname, '../../public')
-// router.use(express.static(publicDirectoryPath))
-
 app = express()
 const bodyParser = require('body-parser')
 app.use(bodyParser.json());
@@ -17,7 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Add Event
 router.post('/events', async (req, res) =>{
     const event = new Event(req.body)
-    console.log(event);
+	console.log(event);
+	console.log(event.href);
     try { 
     	await event.save()
     	res.status(201).send(event)
@@ -28,11 +26,13 @@ router.post('/events', async (req, res) =>{
 
 // Read ALL events
 // Added functionality, if url has eventName search parameter, fitlers for that event name
-router.get('/events', async (req, res) => { 
+router.get('/event', async (req, res) => { 
 	//Create variable to store filter
 	var query = {}
-
+	// TODO: Link search bar button to actually retrive it upon searching
 	try { 
+		console.log(req.query);
+		// const event = await Event.findOne({eventName:"Turkey Trot"})
 		// if filter is present
 		if (req.query.eventName) { 
 			query.eventName = req.query.eventName

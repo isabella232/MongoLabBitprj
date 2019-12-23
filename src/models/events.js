@@ -45,6 +45,10 @@ const Event = mongoose.model('Event', {
     attendeeCount: {
         type: Number,
         default: 0
+    },
+    href: {
+        type: String,
+        default: '/turkey-trot'
     }
 })
 
