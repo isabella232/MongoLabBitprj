@@ -32,15 +32,19 @@ router.get('/events', async (req, res) => {
 	//Create variable to store filter
 	var query = {}
 
-	// if filter is present
-	if (req.query.eventName) { 
+	try { 
+		// if filter is present
+		if (req.query.eventName) { 
 			query.eventName = req.query.eventName
 			const events = await Event.find({"eventName":query.eventName})
 			res.send(events)
-	//no filter present
-	} else { 
-		const events = await Event.find()
-		res.send(events)
+		//no filter present
+		} else { 
+			const events = await Event.find()
+			res.send(events)
+		}
+	} catch (e) { 
+		res.status(500).send()
 	}
 })
 
