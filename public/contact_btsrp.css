@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Rubik:500,700|Roboto:400,600");
-
 .Header-branding-logo{
     height: 50px;
     width: 70;
@@ -623,5 +622,5 @@ select.form-control[multiple] {
 }
 
 .textInSection{
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
