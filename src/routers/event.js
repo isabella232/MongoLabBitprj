@@ -11,18 +11,35 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // REST APIs
-// Add Event
+
+// Routes to add event
 router.post('/events', async (req, res) =>{
     const event = new Event(req.body)
 	console.log(event);
-	console.log(event.href);
+	event.href = "/events/" + event.eventName
     try { 
     	await event.save()
-    	res.status(201).send(event)
+    	res.status(201).redirect('/events')
     } catch(e) {
         res.status(400).send(e)
     }
 })
+
+// Routes to Events Browsing Page
+router.get('/events', async (req, res) => { 
+	try { 
+		const events = await Event.find({})
+		console.log("render events page")
+		console.log(res)
+		// Render "events.hbs" with const events
+		res.render('events', {
+			events: events
+		})
+	} catch (e) { 
+		res.status(500).send(e)
+	}
+})
+
 
 // Read ALL events
 // Added functionality, if url has eventName search parameter, fitlers for that event name
@@ -34,10 +51,14 @@ router.get('/event', async (req, res) => {
 		console.log(req.query);
 		// const event = await Event.findOne({eventName:"Turkey Trot"})
 		// if filter is present
+		console.log(req.query.eventName);
 		if (req.query.eventName) { 
 			query.eventName = req.query.eventName
 			const events = await Event.find({"eventName":query.eventName})
-			res.send(events)
+			console.log(events);
+			res.render('events', {
+				events: events
+			})
 		//no filter present
 		} else { 
 			const events = await Event.find()
@@ -49,24 +70,25 @@ router.get('/event', async (req, res) => {
 })
 
 // Read SINGLE event
-router.get('/events/:id', async (req, res) => { 
-    const _id = req.params.id
+// Silenced because it was being used before /events/:eventName
+// router.get('/events/:id', async (req, res) => { 
+//     const _id = req.params.id
 
-	try {
-		const event = await Event.findById(_id)
+// 	try {
+// 		const event = await Event.findById(_id)
 
-		// if not found return 404 error
-		if (!event) { 
-			return res.status(404).send()
-		}
+// 		// if not found return 404 error
+// 		if (!event) { 
+// 			return res.status(404).send()
+// 		}
 
-		// if found send user
-		res.send(event)
-	//send 500 error if error
-	} catch(e) { 
-		res.status(500).send(e)
-	}
-})
+// 		// if found send user
+// 		res.send(event)
+// 	//send 500 error if error
+// 	} catch(e) { 
+// 		res.status(500).send(e)
+// 	}
+// })
 
 // Delete Event
 router.delete('/events/:id', async (req, res) => {  
