@@ -15,7 +15,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Routes to add event
 router.post('/events', async (req, res) =>{
     const event = new Event(req.body)
-	console.log(event);
 	event.href = "/events/" + event.eventName
     try { 
     	await event.save()
@@ -29,8 +28,6 @@ router.post('/events', async (req, res) =>{
 router.get('/events', async (req, res) => { 
 	try { 
 		const events = await Event.find({})
-		console.log("render events page")
-		console.log(res)
 		// Render "events.hbs" with const events
 		res.render('events', {
 			events: events
@@ -46,16 +43,11 @@ router.get('/events', async (req, res) => {
 router.get('/event', async (req, res) => { 
 	//Create variable to store filter
 	var query = {}
-	// TODO: Link search bar button to actually retrive it upon searching
 	try { 
-		console.log(req.query);
-		// const event = await Event.findOne({eventName:"Turkey Trot"})
-		// if filter is present
-		console.log(req.query.eventName);
 		if (req.query.eventName) { 
 			query.eventName = req.query.eventName
 			const events = await Event.find({"eventName":query.eventName})
-			console.log(events);
+
 			res.render('events', {
 				events: events
 			})
