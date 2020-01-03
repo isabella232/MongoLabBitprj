@@ -3,7 +3,7 @@ body {
 }
 
 /* Full-width input fields */
-  input[type=text], input[type=password] {
+  input[type=text], input[type=date], input[type=time]{
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -13,10 +13,6 @@ body {
 }
 
 
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
 
 .cancel-button {
   padding: 14px 20px;

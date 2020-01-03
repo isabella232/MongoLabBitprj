@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "/Users/raynaney/Desktop/ECS34/MongoLabBitprj"
+		},
+		{
+			"path": "/Users/raynaney/Downloads/MongoLabBitprj-master/vendor"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501,
+		"liveServer.settings.multiRootWorkspaceName": "MongoLabBitprj"
+	}
+}
