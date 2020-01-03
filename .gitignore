@@ -1,7 +1,6 @@
 .DS_Store
-node_modules
-package-lock.json
-package.json
-.Rhistory
 .vscode
 .vscode/
+.Rhistory
+node_modules
+package-lock.json
